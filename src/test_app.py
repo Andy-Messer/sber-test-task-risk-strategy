@@ -1,7 +1,7 @@
 import decimal
 import unittest
 
-from app import (MAX_DEPOSIT_AMOUNT, MAX_DEPOSIT_PERIODS, MAX_DEPOSIT_RATE,
+from src.app import (MAX_DEPOSIT_AMOUNT, MAX_DEPOSIT_PERIODS, MAX_DEPOSIT_RATE,
                  MIN_DEPOSIT_AMOUNT, MIN_DEPOSIT_PERIODS, MIN_DEPOSIT_RATE,
                  VALIDATION_ERRORS, app, date_parser, excel_round)
 from fastapi.testclient import TestClient
