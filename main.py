@@ -112,7 +112,7 @@ async def deposit_calc(description_item: Annotated[DescriptionItem, Depends()]):
     for _ in range(description_item.periods - 1):
         results.append(return_calc(results[-1], description_item.rate))
         
-    datelist = [date_val.date() for date_val in pd.date_range(description_item.dt, periods=10, freq='ME')]
+    datelist = [date_val.date() for date_val in pd.date_range(description_item.dt, periods=description_item.periods, freq='ME')]
     results = [excel_round(result, PRECISION) for result in results]
     
     return {
