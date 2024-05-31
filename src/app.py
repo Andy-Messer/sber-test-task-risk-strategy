@@ -37,9 +37,11 @@ def date_parser(val):
         raise ValidationError.from_exception_data(
             "Wrong description: deposit date parser", line_errors=VALIDATION_ERRORS
         )
+        
     if isinstance(val, date):
         return val
-    raise ValidationError("Wrong description: deposit date parser")
+    
+    raise TypeError("Wrong description: wrong date type")
 
 
 def validate_deposit_periods(val, handler):
